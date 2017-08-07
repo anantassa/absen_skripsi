@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.tassa.absen_skripsi.MatkulActivity">
+
+    <HorizontalScrollView
+        android:id="@+id/hsv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:fillViewport="true"
+        android:measureAllChildren="false"
+        android:scrollbars="none" >
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/id_jadwal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="Semester"
+                android:id="@+id/semester"
+                android:padding="8dp"
+                android:gravity="center_vertical"
+                android:textColor="#2B3D4D"
+                android:textAppearance="?android:textAppearanceSmall"
+                />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="Prodi"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:id="@+id/nama_prodi"
+                android:textColor="#2B3D4D"
+                android:textAppearance="?android:textAppearanceSmall"
+                />
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:text="Kode Seksi"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:id="@+id/kode_seksi"
+                android:textColor="#2B3D4D"
+                />
+
+            <TextView
+                android:id="@+id/matkul"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:text="Mata Kuliah"
+                android:textColor="#2B3D4D" />
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:text="Dosen"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:id="@+id/nama_dosen1"
+                android:textColor="#2B3D4D"
+                />
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:text="Hari"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:id="@+id/hari"
+                android:textColor="#2B3D4D"
+                />
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:text="Kode Jam"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:id="@+id/kode_jam"
+                android:textColor="#2B3D4D"
+                />
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:text="Gedung"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:id="@+id/gedung"
+                android:textColor="#2B3D4D"
+                />
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:text="Ruang"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:id="@+id/ruang"
+                android:textColor="#2B3D4D"
+                />
+
+        </LinearLayout>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/list_absen" />
+        </LinearLayout>
+    </HorizontalScrollView>
+</RelativeLayout>
