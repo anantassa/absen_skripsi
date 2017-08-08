@@ -84,8 +84,7 @@ public class MatkulActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jadwal);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
 
         // menghubungkan variablel pada layout dan pada java
         list = (ListView) findViewById(R.id.list_absen);

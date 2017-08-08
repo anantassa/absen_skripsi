@@ -31,13 +31,16 @@ public class LihatAbsenFragment extends Fragment {
 
     private String id_jadwal;
 
-    private ListView listabsen;
+    private ListView listabsen, listcount;
+    ArrayList<HashMap<String, String>> DaftarCount = new ArrayList<>();
     ArrayList<HashMap<String, String>> DaftarAbsen = new ArrayList<>();
     //  ProgressDialog pDialog;
     private static final String TAG = DetailActivity.class.getSimpleName();
     LihatAbsenModel lihatAbsenModel;
     JadwalModel jadwalModel;
     LihatAbsenAdapter adapter;
+    CountModel countModel;
+    CountAdapter countAdapter;
     JSONArray jsonArray;
 
     public LihatAbsenFragment() {
@@ -53,8 +56,10 @@ public class LihatAbsenFragment extends Fragment {
         id_jadwal = getActivity().getIntent().getStringExtra(jadwalModel.getId_jadwal());
 
         listabsen = (ListView) rowView.findViewById(R.id.list_lihat_absen);
+        listcount = (ListView) rowView.findViewById(R.id.list_count);
 
         loadAbsen(id_jadwal);
+        loadCount(id_jadwal);
 
         return rowView;
     }
@@ -128,6 +133,68 @@ public class LihatAbsenFragment extends Fragment {
             adapter = new LihatAbsenAdapter(getActivity(), daftarAbsen);
             listabsen.setAdapter(adapter);
             adapter.notifyDataSetChanged();
+        }
+    }
+
+    private void loadCount(final String id_jadwal) {
+        String tag_string_req = "req_load_count";
+
+
+        StringRequest strReq = new StringRequest(Request.Method.POST, CountModel.GET_COUNT, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.d(TAG, "Count Response: " + response.toString());
+                //  hideDialog();
+
+                try {
+                    JSONObject jObj = new JSONObject(response);
+                    jsonArray = jObj.getJSONArray("count");
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject c = jsonArray.getJSONObject(i);
+                        String cp1 = c.getString("cp1");
+                        String cp2 = c.getString("cp2");
+
+                        HashMap<String, String> map_count = new HashMap<>();
+                        map_count.put(countModel.cp1, cp1);
+                        map_count.put(countModel.cp2, cp2);
+
+                        DaftarCount.add(map_count);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                SetListCount(DaftarCount);
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e(TAG, "Count Load Error: " + error.getMessage());
+                Toast.makeText(getActivity(),
+                        error.getMessage(), Toast.LENGTH_LONG).show();
+
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() {
+                // Posting parameters to login url
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("id_jadwal", id_jadwal);
+                return params;
+            }
+        };
+        AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
+    }
+
+    private void SetListCount(ArrayList<HashMap<String, String>> daftarCount) {
+        if (daftarCount.size() == 0) {
+            countAdapter = new CountAdapter(getActivity(), new ArrayList<HashMap<String, String>>());
+            listcount.setAdapter(countAdapter);
+            countAdapter.notifyDataSetInvalidated();
+        } else {
+            countAdapter = new CountAdapter(getActivity(), daftarCount);
+            listcount.setAdapter(countAdapter);
+            countAdapter.notifyDataSetChanged();
         }
     }
 }

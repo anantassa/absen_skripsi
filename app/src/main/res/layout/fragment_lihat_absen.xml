@@ -11,10 +11,90 @@
         android:fillViewport="true"
         android:measureAllChildren="false"
         android:scrollbars="none" >
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/id_jadwal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/id_mahasiswa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:text="Noreg"
+                android:id="@+id/noreg"
+                android:padding="8dp"
+                android:gravity="center_vertical"
+                android:textColor="#2B3D4D"
+                android:textAppearance="?android:textAppearanceSmall"
+                />
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:text="Nama"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:id="@+id/nama"
+                android:textColor="#2B3D4D"
+                android:textAppearance="?android:textAppearanceSmall"
+                />
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:text="1"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:id="@+id/pertemuan_1"
+                android:textColor="#2B3D4D"
+                />
+
+            <TextView
+                android:id="@+id/pertemuan_2"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:text="2"
+                android:textColor="#2B3D4D" />
+
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/list_lihat_absen" />
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/list_count" />
+        </LinearLayout>
+        </LinearLayout>
     </HorizontalScrollView>
 
 </FrameLayout>

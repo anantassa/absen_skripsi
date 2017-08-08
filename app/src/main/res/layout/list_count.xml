@@ -6,13 +6,13 @@
 
 
     <TextView
-        android:id="@+id/id_jadwal"
+        android:id="@+id/id_jadwal_c"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"/>
 
     <TextView
-        android:id="@+id/id_mahasiswa"
+        android:id="@+id/id_mahasiswa_c"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"/>
@@ -22,41 +22,41 @@
         android:layout_width="120dp"
         android:layout_height="match_parent"
         android:text="Noreg"
-        android:id="@+id/noreg"
+        android:id="@+id/noreg_c"
         android:padding="8dp"
         android:gravity="center_vertical"
         android:textColor="#2B3D4D"
-        android:textAppearance="?android:textAppearanceSmall"
+        android:visibility="invisible"
         />
 
     <TextView
         android:layout_width="120dp"
         android:layout_height="match_parent"
-        android:text="Nama"
+        android:text="COUNT"
         android:gravity="center_vertical"
         android:padding="8dp"
         android:id="@+id/nama"
         android:textColor="#2B3D4D"
-        android:textAppearance="?android:textAppearanceSmall"
+
         />
 
     <TextView
         android:layout_width="120dp"
         android:layout_height="match_parent"
-        android:text="Pertemuan 1"
+        android:text="1"
         android:gravity="center_vertical"
         android:padding="8dp"
-        android:id="@+id/pertemuan_1"
+        android:id="@+id/cp1"
         android:textColor="#2B3D4D"
         />
 
     <TextView
-        android:id="@+id/pertemuan_2"
+        android:id="@+id/cp2"
         android:layout_width="120dp"
         android:layout_height="match_parent"
         android:gravity="center_vertical"
         android:padding="8dp"
-        android:text="Pertemuan 2"
+        android:text="2"
         android:textColor="#2B3D4D" />
 
 

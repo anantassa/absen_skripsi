@@ -19,7 +19,6 @@
         android:padding="8dp"
         android:gravity="center_vertical"
         android:textColor="#2B3D4D"
-        android:textAppearance="?android:textAppearanceSmall"
         />
 
     <TextView
@@ -30,7 +29,7 @@
         android:padding="8dp"
         android:id="@+id/nama_prodi"
         android:textColor="#2B3D4D"
-        android:textAppearance="?android:textAppearanceSmall"
+
         />
 
     <TextView
