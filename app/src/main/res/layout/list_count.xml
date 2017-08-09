@@ -37,6 +37,8 @@
         android:padding="8dp"
         android:id="@+id/nama"
         android:textColor="#2B3D4D"
+        android:textSize="14dp"
+        android:textStyle="bold"
 
         />
 
@@ -48,6 +50,8 @@
         android:padding="8dp"
         android:id="@+id/cp1"
         android:textColor="#2B3D4D"
+        android:textSize="14dp"
+        android:textStyle="bold"
         />
 
     <TextView
@@ -57,7 +61,9 @@
         android:gravity="center_vertical"
         android:padding="8dp"
         android:text="2"
-        android:textColor="#2B3D4D" />
+        android:textColor="#2B3D4D"
+        android:textSize="14dp"
+        android:textStyle="bold"/>
 
 
 </LinearLayout>

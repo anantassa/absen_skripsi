@@ -1,12 +1,14 @@
 package com.example.tassa.absen_skripsi;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -60,6 +62,26 @@ public class LihatAbsenFragment extends Fragment {
 
         loadAbsen(id_jadwal);
         loadCount(id_jadwal);
+
+        listabsen.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                HashMap<String,String> map = DaftarAbsen.get(position);
+                Intent i = new Intent(getActivity().getApplicationContext(),UpdateAbsenActivity.class);
+                i.putExtra(lihatAbsenModel.id_jadwal,map.get(lihatAbsenModel.id_jadwal));
+                i.putExtra(lihatAbsenModel.id_mahasiswa,map.get(lihatAbsenModel.id_mahasiswa));
+                i.putExtra(lihatAbsenModel.noreg,map.get(lihatAbsenModel.noreg));
+                i.putExtra(lihatAbsenModel.nama,map.get(lihatAbsenModel.nama));
+                i.putExtra(lihatAbsenModel.pertemuan_1,map.get(lihatAbsenModel.pertemuan_1));
+                i.putExtra(lihatAbsenModel.pertemuan_2,map.get(lihatAbsenModel.pertemuan_2));
+
+                startActivity(i);
+            }
+
+        });
+
+
 
         return rowView;
     }

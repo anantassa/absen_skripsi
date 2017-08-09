@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -34,9 +35,10 @@ public class AbsenActivity extends AppCompatActivity {
     JadwalModel jadwalModel;
     LihatAbsenModel lihatAbsenModel;
     JSONArray jsonArray;
-    private String id_jadwal, id_mahasiswa;
+    private String id_jadwal, id_mahasiswa, id_jadwal_et, semester, kode_seksi, nama_prodi, matkul, nama_dosen1, hari, gedung, ruang, kode_jam;
     Button absen;
     static String level;
+    private TextView idj, sems, kodes, matkul_abs, dosen_abs, prodi_abs, hari_abs, ruang_abs, jam_abs, gedung_abs;
 //    GetUserData cls2 = new GetUserData();
 
 
@@ -51,6 +53,29 @@ public class AbsenActivity extends AppCompatActivity {
         Mahasiswa mahasiswa = (Mahasiswa) GetUserData.getData(getApplicationContext());
         id_mahasiswa = mahasiswa.id_mahasiswa;
 
+        id_jadwal_et = getIntent().getStringExtra(jadwalModel.getId_jadwal());
+        semester = getIntent().getStringExtra(jadwalModel.getSemester());
+        nama_prodi = getIntent().getStringExtra(jadwalModel.getNama_prodi());
+        kode_seksi = getIntent().getStringExtra(jadwalModel.getKode_seksi());
+        matkul = getIntent().getStringExtra(jadwalModel.getMatkul());
+        nama_dosen1 = getIntent().getStringExtra(jadwalModel.getNama_dosen1());
+        hari = getIntent().getStringExtra(jadwalModel.getHari());
+        kode_jam = getIntent().getStringExtra(jadwalModel.getKode_jam());
+        gedung = getIntent().getStringExtra(jadwalModel.getGedung());
+        ruang = getIntent().getStringExtra(jadwalModel.getRuang());
+
+
+        sems = (TextView) findViewById(R.id.absen_sems);
+        prodi_abs = (TextView) findViewById(R.id.absen_prodi);
+        kodes = (TextView) findViewById(R.id.absen_kode_seksi);
+        matkul_abs = (TextView) findViewById(R.id.absen_matkul);
+        dosen_abs = (TextView) findViewById(R.id.absen_dosen);
+
+        sems.setText(semester);
+        prodi_abs.setText(nama_prodi);
+        kodes.setText(kode_seksi);
+        matkul_abs.setText(matkul);
+        dosen_abs.setText(nama_dosen1);
 
         spinner = (Spinner) findViewById(R.id.spinner_absen);
 // Create an ArrayAdapter using the string array and a default spinner layout

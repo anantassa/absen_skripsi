@@ -6,6 +6,7 @@ package com.example.tassa.absen_skripsi;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -72,6 +73,7 @@ public class MatkulAdapter extends BaseAdapter {
         if (convertView == null)
             rowView = inflater.inflate(R.layout.list_absen, null);
 
+
         TextView id_jadwal = (TextView) rowView.findViewById(R.id.id_jadwal);
         TextView semester = (TextView) rowView.findViewById(R.id.semester);
         TextView nama_prodi = (TextView) rowView.findViewById(R.id.nama_prodi);
@@ -79,7 +81,7 @@ public class MatkulAdapter extends BaseAdapter {
         TextView matkul = (TextView) rowView.findViewById(R.id.matkul);
         TextView nama_dosen1 = (TextView) rowView.findViewById(R.id.nama_dosen1);
         TextView hari = (TextView) rowView.findViewById(R.id.hari);
-        TextView kode_jam = (TextView) rowView.findViewById(R.id.hari);
+        TextView kode_jam = (TextView) rowView.findViewById(R.id.kode_jam);
         TextView gedung = (TextView) rowView.findViewById(R.id.gedung);
         TextView ruang = (TextView) rowView.findViewById(R.id.ruang);
 
@@ -97,7 +99,11 @@ public class MatkulAdapter extends BaseAdapter {
         gedung.setText(daftar_jadwal.get(jadwalModel.getGedung()));
         ruang.setText(daftar_jadwal.get(jadwalModel.getRuang()));
 
-
+        if (position % 2 == 1) {
+            rowView.setBackgroundColor(Color.LTGRAY);
+        } else {
+            rowView.setBackgroundColor(Color.WHITE);
+            }
 
 
     //  final HashMap<String, String> finalDaftar_jadwal = daftar_jadwal;

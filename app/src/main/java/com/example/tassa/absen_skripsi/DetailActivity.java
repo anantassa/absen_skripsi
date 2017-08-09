@@ -24,7 +24,7 @@ public class DetailActivity extends AppCompatActivity {
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
     private ViewPager mViewPager;
-    private TextView matkul_txt;
+    private TextView matkul_txt, dosen_txt, prodi_txt;
     private String id_jadwal, semester, nama_prodi, kode_seksi, matkul, nama_dosen1, hari, kode_jam, ruang, gedung;
     JadwalModel jadwalModel;
     AppCompatActivity app;
@@ -45,6 +45,8 @@ public class DetailActivity extends AppCompatActivity {
 
 
         matkul_txt = (TextView) findViewById(R.id.matkul_form);
+        dosen_txt = (TextView) findViewById(R.id.dosen_form);
+        prodi_txt = (TextView) findViewById(R.id.prodi_form);
 
 
 //        youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
@@ -64,6 +66,8 @@ public class DetailActivity extends AppCompatActivity {
         ruang = getIntent().getStringExtra(jadwalModel.getRuang());
 
         matkul_txt.setText(matkul);
+        dosen_txt.setText(nama_dosen1);
+        prodi_txt.setText(nama_prodi);
     }
     /**
      * A placeholder fragment containing a simple view.

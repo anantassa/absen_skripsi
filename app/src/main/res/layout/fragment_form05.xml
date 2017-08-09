@@ -2,12 +2,68 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation= "horizontal"
     tools:context="com.example.tassa.absen_skripsi.Form05Fragment">
 
-    <ListView
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation = "vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Form 1    :"
+            android:padding="8dp"
+            android:gravity="center_vertical"
+
+            android:textSize="14dp"
+
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Form 2    :"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:textSize="14dp"
+
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Form 3    :"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:textSize="14dp"
+
+            />
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:text="Form 4    :"
+
+            android:textSize="14dp"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/list_form05" />
+      >
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/list_form05"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="80dp"/>
+    </RelativeLayout>
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_add"
         android:layout_width="wrap_content"

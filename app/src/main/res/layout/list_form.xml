@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/id_jadwal"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="gone"/>
 
@@ -20,45 +20,43 @@
 
 
     <TextView
-        android:layout_width="120dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Form 1"
         android:id="@+id/form_1"
         android:padding="8dp"
         android:gravity="center_vertical"
-        android:textColor="#2B3D4D"
-        android:textAppearance="?android:textAppearanceSmall"
+        android:textSize="14dp"
         />
 
     <TextView
-        android:layout_width="120dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Form 2"
         android:gravity="center_vertical"
         android:padding="8dp"
         android:id="@+id/form_2"
-        android:textColor="#2B3D4D"
-        android:textAppearance="?android:textAppearanceSmall"
+        android:textSize="14dp"
         />
 
     <TextView
-        android:layout_width="120dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Form 3"
         android:gravity="center_vertical"
         android:padding="8dp"
         android:id="@+id/form_3"
-        android:textColor="#2B3D4D"
+        android:textSize="14dp"
         />
 
     <TextView
         android:id="@+id/form_4"
-        android:layout_width="120dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_vertical"
         android:padding="8dp"
         android:text="Form 4"
-        android:textColor="#2B3D4D" />
+        android:textSize="14dp"/>
 
 
 </LinearLayout>

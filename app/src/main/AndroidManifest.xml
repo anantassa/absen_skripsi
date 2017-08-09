@@ -35,8 +35,7 @@
         </activity>
         <activity
             android:name=".MatkulActivity"
-            android:label="@string/app_name"
-             />
+            android:label="@string/app_name" />
         <activity
             android:name=".DetailActivity"
             android:label="@string/app_name"
@@ -47,17 +46,24 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".IsiForm05Activity"
-            android:label="@string/title_activity_isi_form05"
+            android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AbsenActivity"
-            android:label="@string/title_activity_absen"
+            android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".util.SearchActivity" />
-        <activity android:name=".JadwalMhsActivity" />
+        <activity android:name=".JadwalMhsActivity"
+
+
+            />
         <activity
             android:name=".CountActivity"
-            android:label="@string/title_activity_count"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UpdateAbsenActivity"
+            android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

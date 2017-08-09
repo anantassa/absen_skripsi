@@ -2,6 +2,7 @@ package com.example.tassa.absen_skripsi;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,7 +75,11 @@ public class LihatAbsenAdapter extends BaseAdapter {
         pertemuan_2.setText(daftar_absen.get(lihatAbsenModel.getPertemuan_2()));
 
 
-
+        if (position % 2 == 1) {
+            rowView.setBackgroundColor(Color.LTGRAY);
+        } else {
+            rowView.setBackgroundColor(Color.WHITE);
+        }
 
 
         //  final HashMap<String, String> finalDaftar_jadwal = daftar_jadwal;
